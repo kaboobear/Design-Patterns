@@ -1,58 +1,54 @@
-class Engine{
-    turnOn(){
-        console.log("Engine was turned On");
-    }
+class Engine {
+  turnOn() {
+    console.log('Engine was turned On');
+  }
 
-    turnOff(){
-        console.log("Engine was turned Off");
-    }
+  turnOff() {
+    console.log('Engine was turned Off');
+  }
 }
 
 abstract class Command {
-    private engine:Engine;
+  private engine: Engine;
 
-    constructor(engine:Engine){
-        this.engine = engine;
-    }
+  constructor(engine: Engine) {
+    this.engine = engine;
+  }
 
-    getEngine():Engine{
-        return this.engine;
-    }
+  getEngine(): Engine {
+    return this.engine;
+  }
 
-    abstract execute():void;
+  abstract execute(): void;
 }
 
-class CommandOn extends Command{
-    execute(){
-        this.getEngine().turnOn();
-    }
+class CommandOn extends Command {
+  execute() {
+    this.getEngine().turnOn();
+  }
 }
 
-class CommandOff extends Command{
-    execute(){
-        this.getEngine().turnOff();
-    }
+class CommandOff extends Command {
+  execute() {
+    this.getEngine().turnOff();
+  }
 }
 
+class Driver {
+  private command: Command;
 
+  constructor(command: Command) {
+    this.command = command;
+  }
 
-class Driver{
-    private command:Command;
+  execute() {
+    this.command.execute();
+  }
 
-    constructor(command:Command){
-        this.command = command;
-    }
-
-    execute(){
-        this.command.execute();
-    }
-
-    setCommand(command:Command):void{
-        this.command = command;
-    }
+  setCommand(command: Command): void {
+    this.command = command;
+  }
 }
-
-
 
 //-------Start-------
 

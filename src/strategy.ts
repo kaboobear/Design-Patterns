@@ -1,41 +1,40 @@
-abstract class Strategy{
-    abstract make():void;
+abstract class Strategy {
+  abstract make(): void;
 }
 
-class FirstStrategy extends Strategy{
-    make(){
-        console.log("First make function")
-    }
+class FirstStrategy extends Strategy {
+  make() {
+    console.log('First make function');
+  }
 }
 
-class SecondStrategy extends Strategy{
-    make(){
-        console.log("Second make function")
-    }
+class SecondStrategy extends Strategy {
+  make() {
+    console.log('Second make function');
+  }
 }
 
-class ThirdStrategy extends Strategy{
-    make(){
-        console.log("Third make function")
-    }
+class ThirdStrategy extends Strategy {
+  make() {
+    console.log('Third make function');
+  }
 }
 
-class Context{
-    private strategy:Strategy;
+class Context {
+  private strategy: Strategy;
 
-    constructor(strategy:Strategy){
-        this.strategy = strategy
-    }
+  constructor(strategy: Strategy) {
+    this.strategy = strategy;
+  }
 
-    setStrategy(strategy:Strategy){
-        this.strategy = strategy;
-    }
+  setStrategy(strategy: Strategy) {
+    this.strategy = strategy;
+  }
 
-    makeSmth(){
-        this.strategy.make();
-    }
+  makeSmth() {
+    this.strategy.make();
+  }
 }
-
 
 //---------Start----------
 

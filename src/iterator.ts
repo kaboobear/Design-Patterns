@@ -1,32 +1,31 @@
-class Iter{
-    private collection:Array<any>
-    private index:number = 0;
-    
-    constructor(collection:Array<any>){
-        this.collection = collection;
-    }
+class Iter {
+  private collection: Array<any>;
+  private index: number = 0;
 
-    next():any{
-        return this.collection[this.index++];
-    }
+  constructor(collection: Array<any>) {
+    this.collection = collection;
+  }
 
-    hasNext():boolean{
-        return this.index < this.collection.length;
-    }
+  next(): any {
+    return this.collection[this.index++];
+  }
+
+  hasNext(): boolean {
+    return this.index < this.collection.length;
+  }
 }
-
 
 //--------Start---------
 
 const arr = [
-    {title:"One",price:1},
-    {title:"Two",price:2},
-    {title:"Three",price:3},
-    {title:"Four",price:4}
-]
+  { title: 'One', price: 1 },
+  { title: 'Two', price: 2 },
+  { title: 'Three', price: 3 },
+  { title: 'Four', price: 4 },
+];
 
 const iterator = new Iter(arr);
-while(iterator.hasNext()){
-    const elem = iterator.next();
-    console.log(elem.title + " - " + elem.price + "$")
+while (iterator.hasNext()) {
+  const elem = iterator.next();
+  console.log(elem.title + ' - ' + elem.price + '$');
 }

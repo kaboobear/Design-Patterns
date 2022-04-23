@@ -1,60 +1,52 @@
-abstract class Color{
-    private colorName:string;
+abstract class Color {
+  private colorName: string;
 
-    constructor(colorName:string){
-        this.colorName = colorName;
-    }
+  constructor(colorName: string) {
+    this.colorName = colorName;
+  }
 
-    getColor():string{
-        return this.colorName;
-    }
+  getColor(): string {
+    return this.colorName;
+  }
 }
 
-class BlueColor extends Color{
-    constructor(){
-        super("Blue");
-    }
+class BlueColor extends Color {
+  constructor() {
+    super('Blue');
+  }
 }
 
-class RedColor extends Color{
-    constructor(){
-        super("Red");
-    }
+class RedColor extends Color {
+  constructor() {
+    super('Red');
+  }
 }
-
-
 
 abstract class Auto {
-    private model:string;
-    private color:Color;
+  private model: string;
+  private color: Color;
 
-    constructor(color:Color,model:string){
-        this.color = color;
-        this.model = model;
-    }
+  constructor(color: Color, model: string) {
+    this.color = color;
+    this.model = model;
+  }
 
-    showAuto():void{
-        console.log(`Model: ${this.model} \nColor: ${this.color.getColor()} \n`)
-    }
+  showAuto(): void {
+    console.log(`Model: ${this.model} \nColor: ${this.color.getColor()} \n`);
+  }
 }
 
 class Audi extends Auto {
-    constructor(color:Color){
-        super(color,"Audi")
-    }
+  constructor(color: Color) {
+    super(color, 'Audi');
+  }
 }
 
 class Honda extends Auto {
-    constructor(color:Color){
-        super(color,"Mazda")
-    }
+  constructor(color: Color) {
+    super(color, 'Mazda');
+  }
 }
-
-
-
-
-
-
 
 //------------Start-----------
 const myBlueHonda = new Honda(new BlueColor());
